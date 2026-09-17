@@ -1,0 +1,15 @@
+# compilación y build
+build/
+
+CTestTestfile.cmake
+
+# herramientas de C++
+.cache/
+compile_commands.json
+
+# editor
+.vscode/
+
+# archivos del sistema
+.DS_Store
+Thumbs.db
