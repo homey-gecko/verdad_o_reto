@@ -17,7 +17,9 @@ include_directories(include)
 file(GLOB_RECURSE FUENTES "src/*.cpp")
 
 # crea el ejecutable final
-add_executable(${PROJECT_NAME} ${FUENTES})
+add_executable(${PROJECT_NAME} ${FUENTES}
+    include/Pantalla.h
+    src/Pantalla.cpp)
 
 # enlaza la libreria de raylib
 target_link_libraries(${PROJECT_NAME} PRIVATE raylib)

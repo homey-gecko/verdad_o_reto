@@ -1,54 +1,46 @@
-#include <iostream>
-
-#include "Jugador.h"
-#include "Listas.h"
-
+#include "Pantalla.h"
 #include "raylib.h"
 
+#include <string>
 
+// Estados del juego
+enum EstadoJuego{PANTALLA_REGISTRO, PANTALLA_JUEGO};
+
+static Color color_fondo = {30, 27, 36, 255};
 
 int main(){
-    // 1. Inicializar la ventana (Resolución típica de pruebas 800x450)
-    const int pantallaAncho = 800;
-    const int pantallaAlto = 450;
-    InitWindow(pantallaAncho, pantallaAlto, "Verdad o Reto - Pruebas Raylib");
+    const int anchoPantalla = 800;
+    const int altoPantalla = 917;
+    InitWindow(anchoPantalla, altoPantalla, "Verdad o Reto - C++ & Raylib");
+    SetTargetFPS(60);
 
-    // 2. Variables del juego (Una pelota que se mueve)
-    Vector2 posicionPelota = { (float)pantallaAncho / 2, (float)pantallaAlto / 2 };
-    Vector2 velocidadPelota = { 5.0f, 4.0f };
-    float radioPelota = 20.0f;
+    std::string buffer_nombre = "";
+    char sexo_selecionado = 'M';
 
-    SetTargetFPS(60); // Limitar a 60 fotogramas por segundo
 
-    // 3. Bucle principal del juego
-    while (!WindowShouldClose()) {
-        // --- ACTUALIZAR LÓGICA ---
-        posicionPelota.x += velocidadPelota.x;
-        posicionPelota.y += velocidadPelota.y;
+    // Bucle principal del juego
+    while(!WindowShouldClose()){
 
-        // Rebotar en los bordes horizontales
-        if ((posicionPelota.x >= (pantallaAncho - radioPelota)) || (posicionPelota.x <= radioPelota)) {
-            velocidadPelota.x *= -1.0f;
-        }
-        // Rebotar en los bordes verticales
-        if ((posicionPelota.y >= (pantallaAlto - radioPelota)) || (posicionPelota.y <= radioPelota)) {
-            velocidadPelota.y *= -1.0f;
+        if(estado_actual == MENU){
+            actualizar_pantalla_registro(buffer_nombre, sexo_selecionado);
+
+        }else{
+            actualizar_pantalla_juego();
         }
 
-        // --- DIBUJAR ---
         BeginDrawing();
-            ClearBackground(RAYWHITE);
+        ClearBackground(color_fondo);
 
-            DrawText("¡Entorno configurado correctamente!", 190, 200, 20, LIGHTGRAY);
-            DrawCircleV(posicionPelota, radioPelota, MAROON);
-            
-            DrawFPS(10, 10);
+        if(estado_actual == MENU){
+            dibujar_pantalla_registro(buffer_nombre, sexo_selecionado);
+
+        }else{
+            dibujar_pantalla_juego();
+        }
+
         EndDrawing();
     }
 
-    // 4. Cerrar la ventana y liberar memoria
     CloseWindow();
-
-
     return 0;
 }
