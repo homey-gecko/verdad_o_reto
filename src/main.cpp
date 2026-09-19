@@ -24,6 +24,9 @@ int main(){
         if(estado_actual == MENU){
             actualizar_pantalla_registro(buffer_nombre, sexo_selecionado);
 
+        }else if(estado_actual == REGLAS){
+            actualizar_pantalla_reglas();
+
         }else{
             actualizar_pantalla_juego();
         }
@@ -33,6 +36,9 @@ int main(){
 
         if(estado_actual == MENU){
             dibujar_pantalla_registro(buffer_nombre, sexo_selecionado);
+
+        }else if(estado_actual == REGLAS){
+            dibujar_pantalla_reglas();
 
         }else{
             dibujar_pantalla_juego();

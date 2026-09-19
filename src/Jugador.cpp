@@ -1,4 +1,4 @@
-#include "Jugador.h"
+#include "Datos.h"
 
 #include <random>
 
@@ -21,12 +21,12 @@ const int get_id(int tamaño_vector){
 const int get_tiempo(int id_reto){
     int min, max;
 
-    if(id_reto == 11){
-        min = 5;
+    if(id_reto == 15){
+        min = 6;
         max = 10;
-    }else if(id_reto == 12){
+    }else if(id_reto == 16){
         min = 3;
-        max = 7;
+        max = 6;
     }else{
         min = 1;
         max = 3;
