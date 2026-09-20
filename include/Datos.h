@@ -1,5 +1,7 @@
 #pragma once
 
+#include "raylib.h"
+
 #include <string>
 #include <vector>
 
@@ -33,8 +35,6 @@ void agregar_jugador(const std::string &nom, char sex);
 const int get_id(int tamaño_vector);
 const int get_tiempo(int id_reto);
 
-void escoger_jugadores(const int &p, int &c);
-void escoger_jugadores(const int &p, int &s, int &c);
-void escoger_jugadores(const int &p, int &s, int &t, int &c);
-
 /*const std::string &seleccionar_reto(const Reto &reto, const Jugador &jugador);*/
+
+void texto_centrado(Font fuente, const std::string &texto, Rectangle contenedor, float pos_y, float tam_fuente, float espaciado, Color color);

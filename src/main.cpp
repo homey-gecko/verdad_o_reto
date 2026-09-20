@@ -3,14 +3,11 @@
 
 #include <string>
 
-// Estados del juego
-enum EstadoJuego{PANTALLA_REGISTRO, PANTALLA_JUEGO};
-
-static Color color_fondo = {30, 27, 36, 255};
+static Color color_fondo = GetColor(0x1E1B24FF);
 
 int main(){
-    const int anchoPantalla = 800;
-    const int altoPantalla = 917;
+    const int anchoPantalla = 400;
+    const int altoPantalla = 800;
     InitWindow(anchoPantalla, altoPantalla, "Verdad o Reto - C++ & Raylib");
     SetTargetFPS(60);
 
