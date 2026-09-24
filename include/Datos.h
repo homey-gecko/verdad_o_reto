@@ -5,10 +5,11 @@
 #include <string>
 #include <vector>
 
-extern std::string reglas_juego;
+extern std::string reglas_pagina1, reglas_pagina2, reglas_pagina3;
 
 enum Tipo_Reto{INDIVIDUAL, DUO, TRIO};
-enum Tipo_Pareja{CUALQUIERA, OPUESTO};
+enum Tipo_Pareja{CUALQUIERA, OPUESTO, MASCULINO, FEMENINO};
+enum Sexo_Limitante{HOMBRE, MUJER, NINGUNO};
 
 struct Jugador{
     std::string nombre;
@@ -23,6 +24,7 @@ struct Reto{
     std::string descripcion;
     Tipo_Reto t_reto;
     Tipo_Pareja t_pareja;
+    Sexo_Limitante s_limitante;
     bool tiempo;
 };
 

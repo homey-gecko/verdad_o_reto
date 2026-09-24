@@ -14,14 +14,13 @@ int main(){
     std::string buffer_nombre = "";
     char sexo_selecionado = 'M';
 
-
     // Bucle principal del juego
     while(!WindowShouldClose()){
 
         if(estado_actual == MENU){
             actualizar_pantalla_registro(buffer_nombre, sexo_selecionado);
 
-        }else if(estado_actual == REGLAS){
+        }else if(estado_actual == REGLAS1 || estado_actual == REGLAS2 || estado_actual == REGLAS3){
             actualizar_pantalla_reglas();
 
         }else{
@@ -34,7 +33,7 @@ int main(){
         if(estado_actual == MENU){
             dibujar_pantalla_registro(buffer_nombre, sexo_selecionado);
 
-        }else if(estado_actual == REGLAS){
+        }else if(estado_actual == REGLAS1 || estado_actual == REGLAS2 || estado_actual == REGLAS3){
             dibujar_pantalla_reglas();
 
         }else{

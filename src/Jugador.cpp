@@ -21,15 +21,15 @@ const int get_id(int tamaño_vector){
 const int get_tiempo(int id_reto){
     int min, max;
 
-    if(id_reto == 15){
-        min = 6;
-        max = 10;
-    }else if(id_reto == 16){
-        min = 3;
-        max = 6;
-    }else{
-        min = 1;
-        max = 3;
+    switch(id_reto){
+
+        case 0: min = 6; max = 10; break;
+
+        case 1: min = 3; max = 6; break;
+
+        case 2: min = 1; max = 3; break;
+
+        case 3: min = 5; max = 10; break;
     }
 
     std::uniform_int_distribution<> distrib(min, max);
