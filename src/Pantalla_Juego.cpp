@@ -68,7 +68,10 @@ void actualizar_pantalla_juego(){
 
                         id_segundo = get_id(static_cast<int>(lista_jugadores.size()));
 
-                        if(id_segundo == id_actual) repetir = true;
+                        if(id_segundo == id_actual){
+                            repetir = true;
+                            continue;
+                        }
 
                         if((r.t_pareja == MASCULINO && lista_jugadores[id_segundo].sexo != 'M') || (r.t_pareja == FEMENINO && lista_jugadores[id_segundo].sexo != 'F') || (r.t_pareja == OPUESTO && lista_jugadores[id_segundo].sexo == lista_jugadores[id_actual].sexo)){
                             repetir = true;
@@ -97,7 +100,10 @@ void actualizar_pantalla_juego(){
 
                         id_segundo = get_id(static_cast<int>(lista_jugadores.size()));
 
-                        if(id_segundo == id_actual) repetir = true;
+                        if(id_segundo == id_actual){
+                            repetir = true;
+                            continue;
+                        }
 
                         if((r.t_pareja == MASCULINO && lista_jugadores[id_segundo].sexo != 'M') || (r.t_pareja == FEMENINO && lista_jugadores[id_segundo].sexo != 'F') || (r.t_pareja == OPUESTO && lista_jugadores[id_segundo].sexo == lista_jugadores[id_actual].sexo)){
                             repetir = true;
@@ -110,8 +116,15 @@ void actualizar_pantalla_juego(){
 
                         id_tercero = get_id(static_cast<int>(lista_jugadores.size()));
 
-                        if(id_tercero == id_actual) repetir = true;
-                        if(id_tercero == id_segundo) repetir = true;
+                        if(id_tercero == id_actual){
+                            repetir = true;
+                            continue;
+                        }
+
+                        if(id_tercero == id_segundo){
+                            repetir = true;
+                            continue;
+                        }
 
                         if((r.t_pareja == MASCULINO && lista_jugadores[id_tercero].sexo != 'M') || (r.t_pareja == FEMENINO && lista_jugadores[id_tercero].sexo != 'F') || (r.t_pareja == OPUESTO && lista_jugadores[id_tercero].sexo == lista_jugadores[id_actual].sexo)){
                             repetir = true;

@@ -23,13 +23,15 @@ const int get_tiempo(int id_reto){
 
     switch(id_reto){
 
-        case 0: min = 6; max = 10; break;
+        case 0: min = 7; max = 10; break;
 
         case 1: min = 3; max = 6; break;
 
-        case 2: min = 1; max = 3; break;
+        case 2: min = 2; max = 4; break;
 
-        case 3: min = 5; max = 10; break;
+        case 3: min = 10; max = 15; break;
+
+        case 4: min = 2; max = 55; break;
     }
 
     std::uniform_int_distribution<> distrib(min, max);
